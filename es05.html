@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Esercizio Oggetto Persona</title>
+</head>
+<body>
+    <h2>Inserisci i dati della persona</h2>
+    
+    <form id="formPersona">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required><br><br>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" required><br><br>
+
+        <label for="eta">Età:</label>
+        <input type="number" id="eta" required><br><br>
+
+        <button type="submit">Crea Oggetto Persona</button>
+    </form>
+
+    <script>
+        // Intercettiamo l'invio del form
+        document.getElementById('formPersona').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impedisce il ricaricamento della pagina
+
+            // Recuperiamo i dati inseriti dall'utente
+            let nomeInput = document.getElementById('nome').value;
+            let cognomeInput = document.getElementById('cognome').value;
+            let etaInput = document.getElementById('eta').value;
+
+            // Creiamo l'oggetto persona con le informazioni ottenute
+            let persona = {
+                nome: nomeInput,
+                cognome: cognomeInput,
+                eta: Number(etaInput) // Convertiamo l'età in un numero
+            };
+
+            // Stampiamo l'oggetto in console come richiesto
+            console.log(persona);
+        });
+    </script>
+</body>
+</html>
